@@ -1,0 +1,41 @@
+{
+  "name": "advent-of-code-2025",
+  "version": "1.0.0",
+  "description": "Advent of Code 2025 solutions in JavaScript",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "day": "node scripts/run-day.js",
+    "new": "node scripts/new-day.js",
+    "download": "node scripts/download-input.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "benchmark": "node scripts/benchmark.js",
+    "lint": "eslint solutions/ lib/ scripts/ tests/",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "advent-of-code",
+    "algorithms",
+    "programming-contest",
+    "javascript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.54.0",
+    "@eslint/js": "^9.0.0",
+    "prettier": "^3.1.0",
+    "@types/jest": "^29.5.8"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}
