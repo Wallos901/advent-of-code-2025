@@ -32,44 +32,6 @@ function createDayFiles(day) {
     writeFileSync(inputPath, '');
     console.log(`✅ Created input file: inputs/day${paddedDay}.txt`);
   }
-  
-  // Create example file placeholder
-  const examplePath = join(projectRoot, 'examples', `day${paddedDay}_example.txt`);
-  if (!existsSync(examplePath)) {
-    writeFileSync(examplePath, '');
-    console.log(`✅ Created example file: examples/day${paddedDay}_example.txt`);
-  }
-  
-  // Create test file
-  const testPath = join(projectRoot, 'tests', `day${paddedDay}.test.js`);
-  if (!existsSync(testPath)) {
-    const testContent = `import { parseInput, part1, part2 } from '../solutions/day${paddedDay}.js';
-import { readInput } from '../lib/input.js';
-
-describe('Day ${day}', () => {
-  const exampleInput = \`\`;
-  
-  test('parseInput works correctly', () => {
-    const result = parseInput(exampleInput);
-    expect(result).toBeDefined();
-  });
-  
-  test('part 1 example', () => {
-    const data = parseInput(exampleInput);
-    const result = part1(data);
-    expect(result).toBe(0); // Update with expected result
-  });
-  
-  test('part 2 example', () => {
-    const data = parseInput(exampleInput);
-    const result = part2(data);
-    expect(result).toBe(0); // Update with expected result
-  });
-});
-`;
-    writeFileSync(testPath, testContent);
-    console.log(`✅ Created test file: tests/day${paddedDay}.test.js`);
-  }
 }
 
 // Parse command line arguments

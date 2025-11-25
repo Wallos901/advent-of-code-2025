@@ -7,9 +7,6 @@
   "scripts": {
     "day": "node scripts/run-day.js",
     "new": "node scripts/new-day.js",
-    "download": "node scripts/download-input.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
     "benchmark": "node scripts/benchmark.js",
     "lint": "eslint solutions/ lib/ scripts/ tests/",
     "format": "prettier --write ."
