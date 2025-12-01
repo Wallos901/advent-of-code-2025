@@ -1,22 +1,56 @@
 import { readInput } from '../lib/input.js';
 import { performance } from 'perf_hooks';
 
-const DAY = __DAY__;
+const DAY = 1;
 
 const parseInput = (input) => {
-  return input.split('\n');
+  return input.split('\n').map(line => line.trim());
 }
 
 const part1 = (data) => {
   console.log('Solving part 1...');
 
-  return 0;
+  let dial = 50;
+  let password = 0;
+
+  data.forEach(turn => {
+    const dir = turn.slice(0, 1);
+    const steps = parseInt(turn.slice(1), 10);
+    
+    if (dir === 'R') {
+      dial = (dial + steps) % 100;
+    } else if (dir === 'L') {
+      dial = (dial - steps + 100) % 100;
+    }
+
+    if (dial === 0) password = password + 1;
+  })
+
+  return password;
 }
 
 const part2 = (data) => {
   console.log('Solving part 2...');
 
-  return 0;
+  let dial = 50;
+  let password = 0;
+
+  data.forEach(turn => {
+    const dir = turn.slice(0, 1);
+    const steps = parseInt(turn.slice(1), 10);
+
+    for (let i = 0; i < steps; i++) {
+      if (dir === 'R') {
+        dial = (dial + 1) % 100;
+      } else if (dir === 'L') {
+        dial = (dial - 1 + 100) % 100;
+      }
+
+      if (dial === 0) password = password + 1;
+    }
+  })
+
+  return password;
 }
 
 const main = () => {
