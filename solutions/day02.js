@@ -20,7 +20,7 @@ const part1 = (data) => {
       const second = idString.slice(idString.length / 2);
 
       if (first === second) {
-        sum = sum += id
+        sum = sum + id
       }
     }
   })
@@ -48,7 +48,7 @@ const part2 = (data) => {
 
         
         if (chunks.every(x => x === chunks[0])) {
-          sum = sum += id
+          sum = sum + id
           invalid = true;
         }
       }
